@@ -13,7 +13,6 @@ class Login extends React.Component{
     entrar = () => {
         console.log('Email: ', this.state.email)
         console.log('senha: ', this.state.senha)
-
     }
 
     render(){
