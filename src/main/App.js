@@ -1,5 +1,4 @@
 import React from 'react';
-import CadastroUsuario from '../views/cadastroUsuario'
 
 import 'bootswatch/dist/flatly/bootstrap.css'
 import '../custom.css'
