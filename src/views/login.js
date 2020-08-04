@@ -3,6 +3,9 @@ import React from 'react'
 import Card from '../components/cards'
 import formGroup from '../components/form-group'
 
+// Importação do metodo navegar por componente 
+import { withRouter } from 'react-router-dom'
+
 class Login extends React.Component{
 
     state ={
@@ -13,6 +16,13 @@ class Login extends React.Component{
     entrar = () => {
         console.log('Email: ', this.state.email)
         console.log('senha: ', this.state.senha)
+    }
+
+
+    // Importação do metodo navegar por componente 
+    prepareCadastrar = () => {
+        this.props.history.push('/cadastro-usuarios')
+
     }
 
 
@@ -47,7 +57,7 @@ class Login extends React.Component{
                                                         placeholder="Password"/>
                                             </formGroup>
                                                 <button onClick={this.entrar} className="btn btn-success" style={{margin: '2px'}}>Entrar</button>
-                                                <button className="btn btn-danger">Cadastrar</button>
+                                                <button onClick={this.prepareCadastrar} className="btn btn-danger">Cadastrar</button>
                                         </fieldset>
                                     </div>
                                 </div>
@@ -60,4 +70,4 @@ class Login extends React.Component{
     }
 }
 
-export default Login
+export default withRouter(Login);
