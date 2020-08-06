@@ -3,6 +3,8 @@ import React from 'react'
 import Card from '../components/cards'
 import formGroup from '../components/form-group'
 
+import { withRouter } from 'react-router-dom'
+
 class CadastroUsuario extends React.Component{
 
     
@@ -19,6 +21,10 @@ class CadastroUsuario extends React.Component{
         console.log('Email: ', this.state.email)
         console.log('senha: ', this.state.senha)
         console.log('repetirSenha: ', this.state.repetirSenha)
+    }
+
+    voltaTelaDeLogin = () => {
+        this.props.history.push('/login')
     }
 
     render(){
@@ -70,7 +76,7 @@ class CadastroUsuario extends React.Component{
                                             placeholder="Password"/>
                                 </formGroup>
                                 <button onClick={this.cadastrar} className="btn btn-success" style={{margin: '2px'}}>Salvar</button>
-                                <button className="btn btn-danger">Voltar</button>
+                                <button onClick={this.voltaTelaDeLogin} className="btn btn-danger">Voltar</button>
                             </fieldset>
                         </div>
                     </div>
@@ -80,4 +86,4 @@ class CadastroUsuario extends React.Component{
     }
 }
 
-export default CadastroUsuario
+export default withRouter (CadastroUsuario);
