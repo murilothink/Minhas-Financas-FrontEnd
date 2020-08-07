@@ -2,6 +2,7 @@ import React from 'react'
 
 import Card from '../components/cards'
 import formGroup from '../components/form-group'
+import axios from 'axios'
 
 // Importação do metodo navegar por componente 
 import { withRouter } from 'react-router-dom'
@@ -14,17 +15,23 @@ class Login extends React.Component{
     }
 
     entrar = () => {
-        console.log('Email: ', this.state.email)
-        console.log('senha: ', this.state.senha)
+        axios.
+        post('http://localhost:8080/api/usuarios/autenticar',{
+            email: this.state.email,
+            senha: this.state.senha
+        }).then( response => {
+            console.log(response)
+            this.props.history.push('/')
+        }).catch( erro => {
+            console.log(erro.response)
+        })
     }
-
 
     // Importação do metodo navegar por componente 
     prepareCadastrar = () => {
         this.props.history.push('/cadastro-usuarios')
 
     }
-
 
     render(){
         return(

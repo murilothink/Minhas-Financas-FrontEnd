@@ -4,9 +4,8 @@ import { withRouter } from 'react-router-dom'
 class Home extends React.Component{
 
     state = {
-        saldo: 100.00
+        saldo: 100,
     }
-    
     buttomCadastroUsuario = () => {
         this.props.history.push('/')
     }
@@ -21,8 +20,7 @@ class Home extends React.Component{
             <hr className="my-4"/>
             <p>E essa é sua área administrativa, utilize um dos menus ou botões abaixo para navegar pelo sistema.</p>
             <p className="lead">
-            <a onClick={this.buttomCadastroUsuario} 
-                    href="https://bootswatch.com/flatly/#" 
+            <a href="#/cadastro-usuarios" 
                     className="btn btn-primary btn-lg" 
                     role="button"><i 
                     className="fa fa-users"></i>Cadastrar Usuário</a>
